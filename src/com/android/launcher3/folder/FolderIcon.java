@@ -886,7 +886,8 @@ public class FolderIcon extends FrameLayout implements FolderListener {
             // If we are animating to the accepting state, animate the badge out.
             float badgeScale = Math.max(0, mBadgeScale - mBackground.getScaleProgress());
             mTempSpaceForBadgeOffset.set(getWidth() - mTempBounds.right, mTempBounds.top);
-            mBadgeRenderer.draw(canvas, IconPalette.FOLDER_ICON_PALETTE, mBadgeInfo, mTempBounds,
+            IconPalette badgePalette = IconPalette.getFolderBadgePalette(getResources());
+            mBadgeRenderer.draw(canvas, badgePalette, mBadgeInfo, mTempBounds,
                     badgeScale, mTempSpaceForBadgeOffset);
         }
     }
